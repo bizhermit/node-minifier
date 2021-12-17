@@ -2,18 +2,14 @@
 
 import { minify } from "./scripts/minify";
 
-const title = `::: minifier (v${require("../package.json").version}) :::`;
+const title = `::: minifier v${require("../package.json").version} :::`;
 process.stdout.write(`${title}\n`);
 
 const argv = process.argv;
-let dir: string = null;
+let dir: string = process.argv[2] || "./";
 const options = { infoLog: true, js: true, css: true, html: true };
 for (let i = 0, il = argv.length; i < il; i++) {
     const arg = argv[i];
-    if (arg === "-s") {
-        dir = argv[i+1];
-        continue;
-    }
     if (arg === "-ignore" || arg === "-i") {
         for (let j = i + 1; j < il; j++) {
             const argEx = argv[j];

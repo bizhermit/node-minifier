@@ -1,7 +1,7 @@
 {
   "name": "@bizhermit/minifier",
   "version": "1.0.0",
-  "description": "",
+  "description": "minifier",
   "repository": {
     "type": "git",
     "ulr": ""
@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "dev": "npx tsc -w -p src",
-    "build": "npx rimraf bin && npx tsc -p src && node . -s ./bin && npx license-checker --production > LICENSE",
+    "build": "npx rimraf bin && npx tsc -p src && node . ./bin && npx license-checker --production > LICENSE",
     "pack": "npx rimraf build && npm run build && npx pkg --out-path build --compress GZip bin/cli.js"
   },
   "devDependencies": {

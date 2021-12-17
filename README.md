@@ -7,12 +7,15 @@
 - .html
 - .css
 
-※注意）元ファイルを上書きします。
-
 ## 使い方
 
 ```bash
-> npx @bizhermit/minifier [options]
+> npx @bizhermit/minifier [dirname]
 # 例
-> npx @bizhermit/minifier -s ./bin
+> npx @bizhermit/minifier ./bin
 ```
+
+- dirname: 難読化対象のディレクトリの相対パス（初期値はカレントディレクトリ）
+
+対象ディレクトリ内のファイルを再帰的に処理を実行します。  
+※注意）元ファイルを上書きします。

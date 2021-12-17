@@ -1,6 +1,5 @@
 ├─ @bizhermit/minifier@1.0.0
-│  ├─ licenses: UNLICENSED
-│  ├─ private: true
+│  ├─ licenses: MIT
 │  ├─ path: E:\bizhermit\minifier
 │  └─ licenseFile: E:\bizhermit\minifier\LICENSE
 ├─ buffer-from@1.1.2
