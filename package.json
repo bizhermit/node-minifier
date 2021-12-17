@@ -4,11 +4,16 @@
   "description": "minifier",
   "repository": {
     "type": "git",
-    "ulr": ""
+    "ulr": "https://github.com/bizhermit/minifier.git"
   },
-  "bugs": "",
-  "author": "",
-  "contributors": [],
+  "bugs": {
+    "url": "https://github.com/bizhermit/minifier/issues"
+  },
+  "author": "bizhermit.com <support@bizhermit.com> (https://bizhermit.com)",
+  "homepage": "https://bizhermit.com",
+  "contributors": [
+    "Ryoichi Senda <rsenda@bizhermit.com> (https://bizhermit.com)"
+  ],
   "license": "MIT",
   "main": "bin/cli.js",
   "bin": "bin/cli.js",
