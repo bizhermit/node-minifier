@@ -38,5 +38,9 @@
     "csso": "^5.0.1",
     "html-minifier": "^4.0.0",
     "terser": "^5.10.0"
-  }
+  },
+  "keywords": [
+    "bizhermit",
+    "minify"
+  ]
 }
