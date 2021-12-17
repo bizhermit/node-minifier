@@ -1,5 +1,5 @@
 {
-  "name": "minifier",
+  "name": "@bizhermit/minifier",
   "version": "1.0.0",
   "description": "",
   "repository": {
@@ -10,7 +10,6 @@
   "author": "",
   "contributors": [],
   "license": "MIT",
-  "private": true,
   "main": "bin/cli.js",
   "bin": "bin/cli.js",
   "files": [

@@ -1,3 +1,8 @@
+├─ @bizhermit/minifier@1.0.0
+│  ├─ licenses: UNLICENSED
+│  ├─ private: true
+│  ├─ path: E:\bizhermit\minifier
+│  └─ licenseFile: E:\bizhermit\minifier\LICENSE
 ├─ buffer-from@1.1.2
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/LinusU/buffer-from
@@ -69,11 +74,6 @@
 │  ├─ publisher: Mozilla Developer Network
 │  ├─ path: E:\bizhermit\minifier\node_modules\mdn-data
 │  └─ licenseFile: E:\bizhermit\minifier\node_modules\mdn-data\LICENSE
-├─ minifier@0.0.0
-│  ├─ licenses: UNLICENSED
-│  ├─ private: true
-│  ├─ path: E:\bizhermit\minifier
-│  └─ licenseFile: E:\bizhermit\minifier\LICENSE
 ├─ no-case@2.3.2
 │  ├─ licenses: MIT
 │  ├─ repository: https://github.com/blakeembrey/no-case
