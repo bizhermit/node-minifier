@@ -1,13 +1,9 @@
 {
-  "name": "@bizhermit/minifier",
-  "version": "1.0.3",
+  "name": "@biz-hermit/minifier",
+  "version": "0.0.0",
   "description": "minifier",
-  "repository": {
-    "type": "git",
-    "ulr": "https://github.com/bizhermit/minifier.git"
-  },
   "bugs": {
-    "url": "https://github.com/bizhermit/minifier/issues"
+    "email": "support@bizhermit.com"
   },
   "author": "bizhermit.com <support@bizhermit.com> (https://bizhermit.com)",
   "homepage": "https://bizhermit.com",
@@ -22,7 +18,7 @@
   ],
   "scripts": {
     "dev": "npx tsc -w -p src",
-    "build": "npx rimraf bin && npx tsc -p src && node . ./bin && npx license-checker --production > LICENSE",
+    "build": "npx rimraf bin && npx tsc -p src && node . ./bin && npx license-checker --production > AUTHORS",
     "pack": "npx rimraf build && npm run build && npx pkg --out-path build --compress GZip bin/cli.js"
   },
   "devDependencies": {
