@@ -1,6 +1,6 @@
 {
-  "name": "@biz-hermit/minifier",
-  "version": "0.0.0",
+  "name": "@bizhermit/minifier",
+  "version": "1.0.0",
   "description": "minifier",
   "bugs": {
     "email": "support@bizhermit.com"
