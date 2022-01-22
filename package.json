@@ -1,11 +1,11 @@
 {
   "name": "@bizhermit/minifier",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "minifier",
   "repository": {
     "type": "git",
     "url": "https://github.com/bizhermit/minifier.git"
-  },  
+  },
   "bugs": {
     "url": "https://github.com/bizhermit/minifier/issues",
     "email": "support@bizhermit.com"
