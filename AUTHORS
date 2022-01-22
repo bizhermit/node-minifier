@@ -1,5 +1,6 @@
-├─ @bizhermit/minifier@1.0.0
+├─ @bizhermit/minifier@1.0.1
 │  ├─ licenses: MIT
+│  ├─ repository: https://github.com/bizhermit/minifier
 │  ├─ publisher: Ryoichi Senda
 │  ├─ email: rsenda@bizhermit.com
 │  ├─ url: https://bizhermit.com
