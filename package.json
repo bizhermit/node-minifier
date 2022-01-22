@@ -21,7 +21,8 @@
   "scripts": {
     "dev": "npx tsc -w -p src",
     "build": "npx rimraf bin && npx tsc -p src && node . ./bin && npx license-checker --production > AUTHORS",
-    "pack": "npx rimraf build && npm run build && npx pkg --out-path build --compress GZip bin/cli.js"
+    "pack": "npx rimraf build && npm run build && npx pkg --out-path build --compress GZip bin/cli.js",
+    "postpublish": "git tag && git push origin tags/v%npm_package_version%"
   },
   "devDependencies": {
     "@types/csso": "^5.0.0",
