@@ -2,7 +2,12 @@
   "name": "@bizhermit/minifier",
   "version": "1.0.0",
   "description": "minifier",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bizhermit/minifier.git"
+  },  
   "bugs": {
+    "url": "https://github.com/bizhermit/minifier/issues",
     "email": "support@bizhermit.com"
   },
   "author": "Ryoichi Senda <rsenda@bizhermit.com> (https://bizhermit.com)",
@@ -34,6 +39,9 @@
   },
   "keywords": [
     "bizhermit",
-    "minify"
+    "minify",
+    "js",
+    "css",
+    "html"
   ]
 }

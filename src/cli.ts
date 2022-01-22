@@ -2,8 +2,7 @@
 
 import { minify } from "./scripts/minify";
 
-const title = `::: minifier v${require("../package.json").version} :::`;
-process.stdout.write(`${title}\n`);
+process.stdout.write(`::: minifier v${require("../package.json").version} :::\n`);
 
 const argv = process.argv;
 let dir: string = process.argv[2] || "./";
