@@ -20,6 +20,7 @@
   ],
   "scripts": {
     "dev": "npx tsc -w -p src",
+    "try": "node bin/cli.js ./test",
     "build": "npx rimraf bin && npx tsc -p src && node . ./bin && npx license-checker --production > AUTHORS",
     "pack": "npx rimraf build && npm run build && npx pkg --out-path build --compress GZip bin/cli.js",
     "postpublish": "git tag && git push origin tags/v%npm_package_version%"

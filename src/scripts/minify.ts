@@ -15,9 +15,9 @@ export const minify = async (srcDir: string, options?: Options) => {
     if (srcDir == null || srcDir === "") throw new Error("not set source directory");
 
     const infoLog = options?.infoLog === true;
-    const minifyJs = options?.js !== false;
-    const minifyCss = options?.css !== false;
-    const minifyHtml = options?.html !== false;
+    const js = options?.js !== false;
+    const css = options?.css !== false;
+    const html = options?.html !== false;
 
     const impl = async (dir: string) => {
         const names = fs.readdirSync(dir);
@@ -29,30 +29,27 @@ export const minify = async (srcDir: string, options?: Options) => {
                 await impl(fullName);
                 continue;
             }
-            if (minifyJs && /.*\.js$/.test(name)) {
-                if (infoLog) process.stdout.write(`js   : ${fullName}\n`)
-                const code: {[key: string]: any} = {};
-                code[fullName] = extractData(fullName);
-                try {
-                    const ret = await terser.minify(code);
-                    fs.writeFileSync(fullName, ret.code as string);
-                } catch (err) {
-                    process.stderr.write(`${String(err)}\n`);
+            try {
+                if (/.*\.js$/.test(name)) {
+                    if (!js) continue;
+                    if (infoLog) process.stdout.write(`js   : ${fullName}\n`)
+                    fs.writeFileSync(fullName, await minifyJs(extractData(fullName)));
+                    continue;
                 }
-                continue;
-            }
-            if (minifyCss && /.*\.css$/.test(name)) {
-                if (infoLog) process.stdout.write(`css  : ${fullName}`);
-                fs.writeFileSync(fullName, csso.minify(extractData(fullName)).css);
-                continue;
-            }
-            if (minifyHtml && /.*\.html$/.test(name)) {
-                if (infoLog) process.stdout.write(`html : ${fullName}`);
-                fs.writeFileSync(fullName, htmlMinifier.minify(extractData(fullName), {
-                    caseSensitive: true,
-                    collapseWhitespace: true,
-                }));
-                continue;
+                if (/.*\.css$/.test(name)) {
+                    if (!css) continue;
+                    if (infoLog) process.stdout.write(`css  : ${fullName}\n`);
+                    fs.writeFileSync(fullName, await minifyCss(extractData(fullName)));
+                    continue;
+                }
+                if (/.*\.html$/.test(name)) {
+                    if (!html) continue;
+                    if (infoLog) process.stdout.write(`html : ${fullName}\n`);
+                    fs.writeFileSync(fullName, await minifyHtml(extractData(fullName)));
+                    continue;
+                }
+            } catch(err) {
+                process.stderr.write(`${String(err)}\n`);
             }
         }
     };
@@ -61,4 +58,23 @@ export const minify = async (srcDir: string, options?: Options) => {
 
 const extractData = (fullName: string) => {
     return fs.readFileSync(fullName, "utf8").toString();
+};
+
+export const minifyJs = async (content: string) => {
+    const ret = await terser.minify(content);
+    return ret.code;
+};
+
+export const minifyCss = async (content: string) => {
+    return csso.minify(content).css;
+};
+
+export const minifyHtml = (content: string) => {
+    return new Promise<string>((resolve) => {
+        const ret = htmlMinifier.minify(content, {
+            caseSensitive: true,
+            collapseWhitespace: true,
+        });
+        resolve(ret);
+    });
 };
