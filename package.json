@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "dev": "node bin/cli ./test -I js,html,css",
-    "build": "npx rimraf bin LICENSE-ADD && npx tsc -p src && node . ./bin && npx license -o LICENSE-ADD",
+    "build": "npx rimraf bin LICENSE-ADD && npx tsc -p src/tsconfig.json && npx rimraf bin/cli.d.ts && node bin/cli && npx license -o LICENSE-ADD",
     "prepare": "npm run build && git add -A && git diff --quiet --exit-code --cached || git commit -m \"build v%npm_package_version%\" && git push origin",
     "postpublish": "git tag && git push origin tags/v%npm_package_version%"
   },

@@ -11,7 +11,7 @@ type Options = {
   html?: boolean;
 };
 
-export const minify = async (srcDir: string, options?: Options) => {
+const minify = async (srcDir: string, options?: Options) => {
   if (srcDir == null || srcDir === "") throw new Error("not set source directory");
 
   const infoLog = options?.infoLog === true;
@@ -60,16 +60,16 @@ const extractData = (fullName: string) => {
   return fs.readFileSync(fullName, "utf8").toString();
 };
 
-export const minifyJs = async (content: string) => {
+const minifyJs = async (content: string) => {
   const ret = await terser.minify(content);
   return ret.code;
 };
 
-export const minifyCss = async (content: string) => {
+const minifyCss = async (content: string) => {
   return csso.minify(content).css;
 };
 
-export const minifyHtml = (content: string) => {
+const minifyHtml = (content: string) => {
   return new Promise<string>((resolve) => {
     const ret = htmlMinifier.minify(content, {
       caseSensitive: true,
@@ -78,3 +78,12 @@ export const minifyHtml = (content: string) => {
     resolve(ret);
   });
 };
+
+const minifier = {
+  minify,
+  minifyJs,
+  minifyCss,
+  minifyHtml,
+};
+
+export default minifier;

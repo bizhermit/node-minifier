@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-import { minify } from ".";
+import minifier from ".";
 
 process.stdout.write(`::: minifier v${require("../package.json").version} :::\n`);
 
@@ -48,7 +48,7 @@ for (let i = 0, il = argv.length; i < il; i++) {
 }
 process.stdout.write(`${JSON.stringify(options)}\n`);
 try {
-  minify(dirname, options).catch((e: any) => {
+  minifier.minify(dirname, options).catch((e: any) => {
     process.stderr.write(`${String(e)}\n`);
   }).finally(() => {
     process.stdout.write(`minify fin.\n`);
