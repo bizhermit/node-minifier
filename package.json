@@ -10,7 +10,7 @@
     "url": "https://github.com/bizhermit/minifier/issues",
     "email": "support@bizhermit.com"
   },
-  "author": "Ryoichi Senda <rsenda@bizhermit.com> (https://bizhermit.com)",
+  "author": "Senda Ryoichi <rsenda@bizhermit.com> (https://bizhermit.com)",
   "homepage": "https://bizhermit.com",
   "license": "MIT",
   "main": "bin/cli.js",
@@ -21,16 +21,15 @@
   "scripts": {
     "dev": "npx tsc -w -p src",
     "try": "node bin/cli.js ./test",
-    "build": "npx rimraf bin && npx tsc -p src && node . ./bin && npx license-checker --production > AUTHORS",
+    "build": "npx rimraf bin LICENSE-ADD && npx tsc -p src && node . ./bin && npx license -o LICENSE-ADD",
     "pack": "npx rimraf build && npm run build && npx pkg --out-path build --compress GZip bin/cli.js",
     "postpublish": "git tag && git push origin tags/v%npm_package_version%"
   },
   "devDependencies": {
+    "@bizhermit/license": "^0.0.3",
     "@types/csso": "^5.0.0",
     "@types/html-minifier": "^4.0.1",
     "@types/node": "^17.0.0",
-    "license-checker": "^25.0.1",
-    "pkg": "^5.5.1",
     "rimraf": "^3.0.2",
     "typescript": "^4.5.4"
   },
