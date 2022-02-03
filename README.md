@@ -1,22 +1,38 @@
-# minifier
+# File minifier
 
-ファイルを難読化します。  
-以下の拡張子が対象です。
+Minify file recursively.
+his tool target extension:
+* .js
+* .html
+* .css
 
-- .js
-- .html
-- .css
+Warning: overwrite file.
 
-## 使い方
+## CLI
 
+No install
 ```bash
-> npx @bizhermit/minifier [dirname]
-# 例
-> npx @bizhermit/minifier ./bin
+npx @bizhermit/minifier <dirname> <options>
 ```
 
-- dirname: 難読化対象のディレクトリの相対パス（初期値はカレントディレクトリ）
+Install
+```bash
+npm i -D @bizhermit/minifier
+npx minifier <dirname> <options>
+```
 
-指定されたディレクトリに対し、再帰的にファイルを検出して処理を実行します。  
+### Options
+* `-I [extensions]` ignore minify file extensions. colon-separete list.
 
-※注意）元ファイルを上書きします。
+### Example
+
+```bash
+# root dir target
+npx @bizhermit/minifier
+
+# bin dir target
+npx @bizhermit/minifier bin
+
+# ignore css and html file -> only js
+npx @bizhermit/minifier ./ -I css,html
+```
