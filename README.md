@@ -1,12 +1,14 @@
 # File minifier
 
-Minify file recursively.
-his tool target extension:
+Minify file recursively.  
+This tool target extension:
 * .js
 * .html
 * .css
 
 Warning: overwrite file.
+
+---
 
 ## CLI
 
@@ -35,4 +37,25 @@ npx @bizhermit/minifier bin
 
 # ignore css and html file -> only js
 npx @bizhermit/minifier ./ -I css,html
+```
+
+---
+
+## Module
+
+Install
+```bash
+npm i @bizhermit/minifier
+```
+
+### Example
+```ts
+import minifier from "@bizhermit/minifier";
+
+const func = async () => {
+  const jsContentStr = "window.addEventListener(\"load\", () => ..."
+  const minified = await minifier.minifyJs(jsContentStr);
+  console.log(minified); // confirm
+}
+func();
 ```

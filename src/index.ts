@@ -11,8 +11,8 @@ type Options = {
   html?: boolean;
 };
 
-const minify = async (srcDir: string, options?: Options) => {
-  if (srcDir == null || srcDir === "") throw new Error("not set source directory");
+const minify = async (rootDirname: string, options?: Options) => {
+  if (rootDirname == null || rootDirname === "") throw new Error("not set source directory");
 
   const infoLog = options?.infoLog === true;
   const js = options?.js !== false;
@@ -53,7 +53,7 @@ const minify = async (srcDir: string, options?: Options) => {
       }
     }
   };
-  await impl(srcDir);
+  await impl(rootDirname);
 };
 
 const extractData = (fullName: string) => {
