@@ -13,20 +13,19 @@
   "author": "Senda Ryoichi <rsenda@bizhermit.com> (https://bizhermit.com)",
   "homepage": "https://bizhermit.com",
   "license": "MIT",
-  "main": "bin/cli.js",
+  "main": "bin/index",
   "bin": "bin/cli.js",
   "files": [
     "bin"
   ],
   "scripts": {
-    "dev": "npx tsc -w -p src",
-    "try": "node bin/cli.js ./test",
+    "dev": "node bin/cli ./test -I js,html,css",
     "build": "npx rimraf bin LICENSE-ADD && npx tsc -p src && node . ./bin && npx license -o LICENSE-ADD",
-    "pack": "npx rimraf build && npm run build && npx pkg --out-path build --compress GZip bin/cli.js",
+    "prepare": "npm run build && git add -A && git diff --quiet --exit-code --cached || git commit -m \"build v%npm_package_version%\" && git push origin",
     "postpublish": "git tag && git push origin tags/v%npm_package_version%"
   },
   "devDependencies": {
-    "@bizhermit/license": "^0.0.3",
+    "@bizhermit/license": "^1.0.1",
     "@types/csso": "^5.0.0",
     "@types/html-minifier": "^4.0.1",
     "@types/node": "^17.0.0",
