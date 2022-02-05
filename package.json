@@ -16,11 +16,13 @@
   "main": "bin/index",
   "bin": "bin/cli.js",
   "files": [
-    "bin"
+    "bin",
+    "CREDIT"
   ],
   "scripts": {
     "dev": "node bin/cli ./test -I js,html,css",
-    "build": "npx rimraf bin CREDIT && npx license -o CREDIT --returnError && npx tsc -p src/tsconfig.json && npx rimraf bin/cli.d.ts && node bin/cli bin",
+    "license": "npx rimraf CREDIT && npx license -o CREDIT --returnError",
+    "build": "npm run license && npx rimraf bin && npx tsc -p src/tsconfig.json && npx rimraf bin/cli.d.ts && node bin/cli bin",
     "prepare": "npm run build && git add -A && git diff --quiet --exit-code --cached || git commit -m \"build v%npm_package_version%\" && git push origin",
     "postpublish": "git tag && git push origin tags/v%npm_package_version%"
   },
