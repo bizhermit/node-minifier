@@ -20,12 +20,12 @@
   ],
   "scripts": {
     "dev": "node bin/cli ./test -I js,html,css",
-    "build": "npx rimraf bin LICENSE-ADD && npx license -o LICENSE-ADD --returnError && npx tsc -p src/tsconfig.json && npx rimraf bin/cli.d.ts && node bin/cli bin",
+    "build": "npx rimraf bin CREDIT && npx license -o CREDIT --returnError && npx tsc -p src/tsconfig.json && npx rimraf bin/cli.d.ts && node bin/cli bin",
     "prepare": "npm run build && git add -A && git diff --quiet --exit-code --cached || git commit -m \"build v%npm_package_version%\" && git push origin",
     "postpublish": "git tag && git push origin tags/v%npm_package_version%"
   },
   "devDependencies": {
-    "@bizhermit/license": "^1.0.8",
+    "@bizhermit/license": "^1.0.9",
     "@types/csso": "^5.0.0",
     "@types/html-minifier": "^4.0.1",
     "@types/node": "^17.0.0",
