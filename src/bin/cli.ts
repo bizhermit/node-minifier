@@ -1,14 +1,14 @@
 #! /usr/bin/env node
 
-import minifier from ".";
+import minifier from "../dist";
 
 process.stdout.write(`::: minifier v${require("../package.json").version} :::\n`);
 
 const getArgV = (key: string) => {
   const index = process.argv.findIndex(v => v === key);
-  if (index < 0) return null;
+  if (index < 0) return undefined;
   const val = process.argv[index + 1];
-  if (val.startsWith("-")) return null;
+  if (val.startsWith("-")) return undefined;
   return val;
 };
 

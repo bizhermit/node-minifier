@@ -62,7 +62,7 @@ const extractData = (fullName: string) => {
 
 const minifyJs = async (content: string) => {
   const ret = await terser.minify(content);
-  return ret.code;
+  return ret.code || "";
 };
 
 const minifyCss = async (content: string) => {
