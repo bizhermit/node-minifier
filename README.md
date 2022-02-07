@@ -25,6 +25,7 @@ npx minifier <dirname> <options>
 
 ### Options
 * `-I [extensions]` ignore minify file extensions. colon-separete list.
+* `--quiet` not print infomation log.
 
 ### Example
 
