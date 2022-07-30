@@ -10,9 +10,10 @@
     "noImplicitAny": true,
     "skipLibCheck": true,
     "rootDir": "./",
-    "outDir": "../",
-    "declaration": true
+    "outDir": "../package",
+    "declaration": true,
+    "declarationDir": "./"
   },
-  "exclude": ["../bin", "../dist"],
-  "include": ["bin/**/*.ts", "dist/**/*.ts"]
+  "exclude": ["node_modules"],
+  "include": ["**/*.ts"]
 }
