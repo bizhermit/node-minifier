@@ -4,10 +4,10 @@
   "description": "minifier",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bizhermit/minifier.git"
+    "url": "https://github.com/bizhermit/node-minifier.git"
   },
   "bugs": {
-    "url": "https://github.com/bizhermit/minifier/issues"
+    "url": "https://github.com/bizhermit/node-minifier/issues"
   },
   "author": "Senda Ryoichi <rsenda@bizhermit.com> (https://bizhermit.com)",
   "homepage": "https://bizhermit.com",
