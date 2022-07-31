@@ -27,7 +27,7 @@
     "dist"
   ],
   "dependencies": {
-    "@bizhermit/cli-sdk": "^2.0.0-rc.0",
+    "@bizhermit/cli-utils": "^1.0.0-rc.0",
     "csso": "^5.0.4",
     "html-minifier": "^4.0.0",
     "terser": "^5.14.2"

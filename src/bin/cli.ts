@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 import path from "path";
-import { getArg, getKeyArg, hasKeyArg } from "@bizhermit/cli-sdk";
+import { getArg, getKeyArg, hasKeyArg } from "@bizhermit/cli-utils";
 import minifier from "../dist";
 
 const quiet = hasKeyArg("--quiet");

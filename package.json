@@ -17,7 +17,7 @@
     "build": "npm run license && npx rimraf package && npx tsc -p src/tsconfig.json && npx rimraf src/bin/cli.d.ts && npx npm-package-utils pack && node package/bin/cli package"
   },
   "devDependencies": {
-    "@bizhermit/license": "^1.0.10",
+    "@bizhermit/license": "^2.0.0-rc.2",
     "@bizhermit/npm-package-utils": "^0.0.0-rc.7",
     "csso": "^5.0.4",
     "html-minifier": "^4.0.0",
